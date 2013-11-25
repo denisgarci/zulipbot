@@ -41,8 +41,11 @@ class ZulipCient(object):
 
 
 if __name__ == '__main__':
-    email = 'babar-bot@students.hackerschool.com'
-    api_key = '9OKMWIbzeMfz7cI33UFqWvZ7vYFzNo84'
+
+    from os import environ
+
+    email = environ['zulip_email']
+    api_key = environ['zulip_key']
 
     client = ZulipCient(email, api_key)
     client.send_message(message_type="private",\
